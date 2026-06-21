@@ -30,25 +30,25 @@ export default function Dashboard() {
       <div className="summary-grid">
         <div className="summary-card">
           <div className="label">Total Products</div>
-          <div className="value">{summary.total_products}</div>
+          <div className="value">{summary?.total_products}</div>
         </div>
         <div className="summary-card">
           <div className="label">Total Customers</div>
-          <div className="value">{summary.total_customers}</div>
+          <div className="value">{summary?.total_customers}</div>
         </div>
         <div className="summary-card">
           <div className="label">Total Orders</div>
-          <div className="value">{summary.total_orders}</div>
+          <div className="value">{summary?.total_orders}</div>
         </div>
         <div className="summary-card">
           <div className="label">Low Stock Items</div>
-          <div className="value">{summary.low_stock_products.length}</div>
+          <div className="value">{summary?.low_stock_products?.length}</div>
         </div>
       </div>
 
       <div className="card">
         <h3 style={{ marginTop: 0 }}>Low Stock Products</h3>
-        {summary.low_stock_products.length === 0 ? (
+        {summary.low_stock_products?.length === 0 ? (
           <div className="empty-state">All products are well-stocked.</div>
         ) : (
           <table>
@@ -60,7 +60,7 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody>
-              {summary.low_stock_products.map((p) => (
+              {summary.low_stock_product && summary.low_stock_products.map((p) => (
                 <tr key={p.id}>
                   <td data-label="Name">{p.name}</td>
                   <td data-label="SKU">{p.sku}</td>

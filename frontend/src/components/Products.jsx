@@ -22,7 +22,7 @@ export default function Products() {
 
   useEffect(() => {
     load();
-  }, []);
+  }, []);s
 
   const resetForm = () => {
     setForm(emptyForm);
@@ -150,7 +150,7 @@ export default function Products() {
               </tr>
             </thead>
             <tbody>
-              {products.map((p) => (
+              {products.length > 0 && products.map((p) => (
                 <tr key={p.id}>
                   <td data-label="Name">{p.name}</td>
                   <td data-label="SKU">{p.sku}</td>
