@@ -22,7 +22,7 @@ export default function Products() {
 
   useEffect(() => {
     load();
-  }, []);s
+  }, []);
 
   const resetForm = () => {
     setForm(emptyForm);
